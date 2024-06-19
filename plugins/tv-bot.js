@@ -1,1 +1,54 @@
-(function(_0x276a48,_0x547c90){const _0x555fe5=_0x3b38,_0x581b50=_0x276a48();while(!![]){try{const _0x5333e1=parseInt(_0x555fe5(0x1e7))/0x1*(parseInt(_0x555fe5(0x1e1))/0x2)+parseInt(_0x555fe5(0x1e5))/0x3+parseInt(_0x555fe5(0x1dd))/0x4+parseInt(_0x555fe5(0x1e6))/0x5*(parseInt(_0x555fe5(0x1f0))/0x6)+parseInt(_0x555fe5(0x1de))/0x7*(-parseInt(_0x555fe5(0x1e8))/0x8)+parseInt(_0x555fe5(0x1f2))/0x9*(-parseInt(_0x555fe5(0x1e9))/0xa)+-parseInt(_0x555fe5(0x1d8))/0xb;if(_0x5333e1===_0x547c90)break;else _0x581b50['push'](_0x581b50['shift']());}catch(_0x424b4a){_0x581b50['push'](_0x581b50['shift']());}}}(_0xbcd2,0xa41f1));function _0xbcd2(){const _0x50c8fb=['sender','2EYqEzn','getRandom','Powered\x20By\x20TurboMods','chat','2135871vwzzus','259060ovHxUa','550973xOvyoq','3976geHJwp','5735890SdazXB','Toxic\x20Alexa','length','audio/mpeg','.mp3','text','buffer','36AahwTV','split','9hZmjoO','@916380260672','includes','sendMessage','7943485tqCnTc','toLowerCase','@s.whatsapp.net','ToxicAlexa','./Assets/mp3/','1626352LNzIje','175HXzHYs','Error\x20handling\x20message:'];_0xbcd2=function(){return _0x50c8fb;};return _0xbcd2();}import _0x13cfdf from'node-fetch';let handler=_0x392733=>_0x392733;function _0x3b38(_0x5a33b9,_0x3cde18){const _0xbcd256=_0xbcd2();return _0x3b38=function(_0x3b3869,_0x2a1b1a){_0x3b3869=_0x3b3869-0x1d5;let _0x2979fe=_0xbcd256[_0x3b3869];return _0x2979fe;},_0x3b38(_0x5a33b9,_0x3cde18);}handler['all']=async function(_0x399399){const _0x588ecc=_0x3b38;try{const _0x33564b=_0x588ecc(0x1d5),_0x41a0f4=[''+_0x33564b],_0x426d45=_0x399399[_0x588ecc(0x1ee)][_0x588ecc(0x1d9)](),_0xd96cf=_0x41a0f4['find'](_0x4ec33c=>_0x426d45[_0x588ecc(0x1d6)](_0x4ec33c[_0x588ecc(0x1d9)]()));if(_0xd96cf){let _0xe75cda='@'+_0x399399[_0x588ecc(0x1e0)][_0x588ecc(0x1f1)](_0x588ecc(0x1da))[0x0],_0x2e34c4=_0x588ecc(0x1dc)+pickRandom(['T1','T2','T3','T4','T5','T6'])+_0x588ecc(0x1ed),_0x330d80={'audio':{'url':_0x2e34c4},'mimetype':_0x588ecc(0x1ec),'ptt':!![],'waveform':[0x64,0x0,0x64,0x0,0x64,0x0,0x64],'fileName':_0x588ecc(0x1db),'contextInfo':{'externalAdReply':{'title':_0x588ecc(0x1e3),'body':_0x588ecc(0x1ea),'thumbnail':await(await _0x13cfdf(alexaimg[_0x588ecc(0x1e2)]()))[_0x588ecc(0x1ef)](),'sourceUrl':null,'mediaUrl':alexamedia['getRandom'](),'mediaType':0x1,'showAdAttribution':!![],'renderLargerThumbnail':![]}}};await conn[_0x588ecc(0x1d7)](_0x399399[_0x588ecc(0x1e4)],_0x330d80,{'quoted':_0x399399});}}catch(_0x26108b){console['error'](_0x588ecc(0x1df),_0x26108b);}};export default handler;function pickRandom(_0x2583c9){const _0x5e3cd3=_0x3b38;return _0x2583c9[Math['floor'](Math['random']()*_0x2583c9[_0x5e3cd3(0x1eb)])];}
+import fetch from 'node-fetch';
+
+let handler = m => m;
+
+handler.all = async function (m) {
+  try {
+    // The list of commands
+    const ommention = '@916380260672'
+    const commands = [`${ommention}`];
+    
+    // Convert the message to lowercase to make it case-insensitive
+    const messageText = m.text.toLowerCase();
+
+    // Check if the message contains any of the commands
+    const matchedCommand = commands.find(cmd => messageText.includes(cmd.toLowerCase()));
+
+    if (matchedCommand) {
+      let taguser = '@' + m.sender.split("@s.whatsapp.net")[0];
+      let tv = `./Assets/mp3/${pickRandom(["T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8", "T9", "T10", "T11"])}.mp3`;
+      let doc = {
+        audio: {
+          url: tv,
+        },
+        mimetype: 'audio/mpeg',
+        ptt: true,
+        waveform: [100, 0, 100, 0, 100, 0, 100],
+        fileName: 'ToxicAlexa',
+        contextInfo: {
+          externalAdReply: {
+            title: 'TurboMods',
+            body: 'The Greatest Developer 🗿💫',
+            thumbnail: await (await fetch(ownerimg2.getRandom())).buffer(),
+            sourceUrl: null,
+            mediaUrl: alexamedia.getRandom(),
+            mediaType: 1,
+            showAdAttribution: true,
+            renderLargerThumbnail: false,
+          },
+        },
+      };
+
+      await conn.sendMessage(m.chat, doc, { quoted: m });
+    }
+  } catch (error) {
+    console.error('Error handling message:', error);
+  }
+};
+
+export default handler;
+
+// Helper function to pick a random item from an array
+function pickRandom(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
